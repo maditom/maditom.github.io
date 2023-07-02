@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//HU">
+<html>
+
+<head>
+  <title>F11</title>
+  <link rel="stylesheet" href="/images/decision-tree.css">
+  <script type="text/javascript" src="/images/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="/images/decision-tree.js"></script>
+
+</head>
+
+<body>
+
+  <div id="tree-container">
+    <div id="q-container">
+      <h3>DW30-as mosogatógép család F11-es hibakódja esetén követendő eljárás </h3><br>
+      <h4>Az F11 hiba vízleeresztési hibát jelenti.
+        A hiba akkor jelenik meg, ha a vízszint a vízszivattyúzási fázisban 120 másodpercen belül nem esik 60 mm
+        alá.</h4><br>
+      <ul id="tree">
+
+        <li> 1. Húzd le a kifolyócsövet a szifonről vagy fali csatlakozóról. <br>
+          Ellenőrizd, hogy a leeresztő tömlő nincs-e eltömődve vagy megtörve<br>
+          Nézz a cső végébe nincs-e benne mechanikai akadály, majd tartsd egy vödör főlé és rögzítsd oda a teszt
+          idejére! <br>Tiszta és dugulásmentes a cső ?</li>
+
+        <li><input name="lvl1" type="radio">Igen
+          <ul>Kifolyócső ellenőrizve és tiszta
+            <li>2. Ellenőrizd a szűrő tisztaságát <br>
+              <img src="/img/dw1.jpg" alt="tiszta" width="30%"><img src="/img/dw1b.jpg" alt="koszos" width="30%"><br>
+              Minden szűrő tiszta?
+            </li>
+            <li><input name="lvl2" type="radio">Igen
+              <ul>Szűrők megtisztítva
+                <li>3. Ellenőrizd, hogy a sárga beépülő modul nem hiányzik, és megfelelően
+                  van-e telepítve. <br>
+                  <img src="/img/dw2.jpg" alt="sárga" width="40%"><br> Megvan a sárga elem és a helyén van ?
+                </li>
+                <li><input name="lvl3" type="radio">Igen
+                  <ul>Sárga elem a helyén
+                    <li>4. Ellenőrizd, hogy a leeresztő szivattyú nincs-e eltömődve (óvakodj az esetleges
+                      üvegmaradványoktól stb.), és hogy működik-e! <br> Van mechanikai akadály?
+                    </li>
+
+                    <li><input name="lvl4" type="radio">Nincs
+                      <ul>Szivattyúház tiszta <br>
+                        <li> <b> 5.Tisztítsd meg a vízszint-érzékelő légsűrítő kamráját. </b><br>
+                          <p style="font-family: 'Times New Roman', Times, serif; text-align: justify;">
+                            (A nyomáskamra eltömődése esetén a levegő nem tud szabadon áramlani,<br> és befolyásolhatja a
+                            működést, ami a hiba kiváltását okozhatja) <br>
+                            Önts 1 liter forró vizet az iszapcsapdába! <br>Várj 2 percet (használj kesztyűt), <br>egy
+                            kábelkötőző segítségével tisztítsd meg a légsűrítő kamrát,<br> majd űrítsd le a vizet. <br>
+                            Ismételd meg az eljárást legalább háromszor! <br>Tisztítsd meg az iszapcsapda belső felületét! <br> Ha
+                            zsírfoltokat észlelsz,  <br>mondd
+                            az ügyfélnek, hogy futtasson le egy öntisztító programot <br> vagy egy intenzív, edény nélküli
+                            programot a hibajelenség megoldásához. <br></p>
+                          <img src="/img/dw3.jpg" alt="1" width="40%"> <br> <img src="/img/dw3a.jpg" alt="2"
+                            width="40%"> <br>
+                          <img src="/img/dw3b.jpg" alt="3" width="40%"> <br> <img src="/img/dw3c.jpg" alt="4"
+                            width="40%"> <br>
+                           <br><br>
+                        </li>
+                        <li class="answer">
+                          <p>Végezz el teljes resetet és kalibrálást!</p>
+
+                          <p>Tisztítás után a szervizprogramban futtasd le az r01- teljes resetet és az r02 kalibrálást!
+                          </p>
+                        </li>
+
+                      </ul>
+
+
+                    </li>
+                    <li><input name="lvl4" type="radio">Van
+                    <ul> 
+                      Tisztítsd meg a szivattyúházat! <br>Óvatosan , kerülve a kezed és a lapátkerék sérülését!
+                    </ul></li>
+                  </ul>
+
+                </li>
+            </li>
+            <li><input name="lvl3" type="radio">Nincs
+              <ul> <br>
+              Pótold a hiányzó sárga idomot (kétféle van lásd a képet!) <br>
+            </ul></li>
+          </ul>
+
+        </li>
+
+        <li><input name="lvl2" type="radio">Nem
+          <ul> <br>
+          Tisztítsd meg a szűrőket, kifejezetten a finomszűrő átjárhatőságára ügyelj!
+        </ul>
+        </li>
+      </ul>
+
+      </li>
+      <li><input name="lvl1" type="radio">Nem
+        <ul> <br>
+          Tisztítsd meg a szifont és a kifolyócsövet! <br> Ügyelj a törésmentes kifolyócső elhelyezésre! <br>
+        </ul>
+
+      </li>
+   
+      </ul>
+      
+    </div>
+    <button id="goBack" class="treeControls">Vissza</button>
+
+    <button id="reset" class="treeControls">Újrakezd</button>
+    <br> <br> <a href="/index.html">Főoldal</a>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//HU">
+<html>
+
+<head>
+  <title>F12</title>
+  <link rel="stylesheet" href="/images/decision-tree.css">
+  <script type="text/javascript" src="/images/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="/images/decision-tree.js"></script>
+
+</head>
+
+<body>
+
+  <div id="tree-container">
+    <div id="q-container">
+      <h3>DW30-as mosogatógép család F12-es hibakódja esetén követendő eljárás </h3><br>
+      <h4>Az F12 hiba vízbetöltési hibát jelenti. <br></h4>
+      A gépnek két módja van az F12 észlelésére: <br>
+      <h5>
+        • Ha a gép vízbetöltési módja CP-re (impulzusra) van beállítva, <br>
+        akkor az azt jelenti, hogy az áramlásmérő nem érzékelt <br>
+        30 másodpercen belül elegendő impulzust, és így a program leáll. <br><br>
+        • Ha a gép vízbetöltési módja CL-re (idő) van beállítva, <br>
+        akkor az azt jelenti, hogy a betöltés időre történik <br> és a vízszintet nyomásérzékelő is méri. <br>
+        A CL vízbetöltési mód csak nyomásérzékelővel ellátott gépeken lehetséges. <br>
+        Ha a nyomásérzékelő nem érzékeli a megfelelő vízszintet, a program leáll. <br>
+      </h5><br>
+      <h3>Az F12-es hibakód esetén követendő javítási eljárás</h3>
+      <ul id="tree">
+
+        <li> 1. Húzd le a kifolyócsövet a szifonről vagy fali csatlakozóról. <br>
+          <p style="font-weight: lighter;">Ellenőrizd, hogy a leeresztő tömlő nincs-e eltömődve vagy megtörve, kifolyási
+            magassága megfelelő-e?<br>
+            Nézz a cső végébe nincs-e benne mechanikai akadály, majd tartsd egy vödör főlé és rögzítsd oda a teszt
+            idejére! <br>Tiszta és dugulásmentes a cső ? </p>
+        </li>
+
+        <li><input name="lvl1" type="radio">Igen
+          <ul>Kifolyócső ellenőrizve és tiszta
+            <li>2. Vedd le a befolyócsövet a csapról és ellenőrizd a benne lévő szűrő tisztaságát! <br>
+              <p style="font-weight: lighter;">Tarts egy vödröt a csap alá és nyisd meg. <br>
+                15 másodperc alatt 3 liter viznek kell minimum kifolyni a megfelelő működéshez! <br>
+                Megfelelő a víz beáramlása, mennyisége és nyomása?</p>
+            </li>
+            <li><input name="lvl2" type="radio">Igen
+              <ul>Vízcsap nyitva, víznyomás megfelelő
+                <li>3. Ellenőrizd az átfolyásmérőt. <br>
+                  <p style="font-weight: lighter;">Az átfolyásmérő hibás jelet adhat, ha a gép belsejében víz van. <br>
+                    Azt is ellenőrizni kell, hogy a csatlakozó csövek megfelelően vannak-e csatlakoztatva a
+                    labirintusra.<br>
+                    Az átfolyásmérő egy forgó lapátkerék, rajta két mágnessel. <br>
+                    A labirintusban egy kis áramköri lapon egy REED relé helyezkedik el. <br>
+                    A csatlakozón szakadásvizsgálóval ellenőrizd a relé működését! <br>
+                    Ellenörizd a vezérlőegység csatlakozójánál is a REED relé működését! <br>
+                    Nézd meg, hogy a labirintus felső részén lévő félkör alakú <br>
+                    nyomáscsökkentő alkatrészből rendesen folyik-e ki a víz. <br>
+                    Ha nem vagy csak csepeg, akkor cserélj labirintust!</p>
+                  <img src="img/e1.png" alt="sl" width="40%">
+                  <br> Működik az áramlásérzékelő ?
+                </li>
+                <li><input name="lvl3" type="radio">Igen
+                  <ul>Áramlásérzékelő nem hibás <br>
+                    <li>4. Ha mindkét alkatrész működik és a gép megfelelően van beszerelve: <br>
+                      tisztítsd meg teljesen a szűrőket és az iszapcsapdát! <br> Végezzd el a teljes resetet r01, majd
+                      kalibrálást r02. <br>
+                      <img src="/img/e2.png" alt="r01"> <br>
+                      Futtass öblítő programot. <br> Ha ismét megjelenik az F12, állítsd a gépet CL-re (időszabályzott
+                      vízbetöltés). <br>
+                      Ha most sem működik a készülék, milyen vízbetöltésre van beállítva? <br>
+                    </li>
+
+                    <li><input name="lvl4" type="radio">CL
+                      <ul>Hibás működés CL beállításnál <br>
+                        <li> <b> Ha a készülék CL-re van állítva, és a hiba továbbra is megjelenik, <br>
+                            ki kell cserélni a nyomásérzékelőt. </b><br>
+                          <img src="/img/e3.jpg" alt="vv1" width="20%"> <br><br>
+                        </li>
+                        <li class="answer">
+                          <p>Végezz el teljes resetet és kalibrálást!</p>
+
+                          <p>Tisztítás után a szervizprogramban futtasd le az r01- teljes resetet és az r02 kalibrálást!
+                          </p>
+                        </li>
+
+                      </ul>
+
+
+                    </li>
+                    <li><input name="lvl4" type="radio">CP
+                      <ul>
+                        Ha a készülék CP impulzustöltésre van beállítva, labirintust kell cserélni. <br>
+                      </ul>
+                    </li>
+                    <li class="answer">
+                      <p>Végezz el teljes resetet és kalibrálást!</p>
+
+                      <p>Tisztítás után a szervizprogramban futtasd le az r01- teljes resetet és az r02 kalibrálást!
+                      </p>
+                    </li>
+                  </ul>
+
+                </li>
+            </li>
+            <li><input name="lvl3" type="radio">Nem
+              <ul> <br>
+                Cserélj labirintust (átfolyásmérőt vagy vezetéket) <br>
+              </ul>
+            </li>
+          </ul>
+
+        </li>
+
+        <li><input name="lvl2" type="radio">Nem
+          <ul> <br>
+           Ha nem folyik elég víz a csapból, cseréltesd ki az ügyféllel, mert ez nem készülékhiba! <br>
+           Tisztítsd meg a befolyócső szürőjét! <br>
+           Cserélj befolyócsővet <br>
+          </ul>
+        </li>
+      </ul>
+
+      </li>
+      <li><input name="lvl1" type="radio">Nem
+        <ul> <br>
+          Tisztítsd meg a szifont és a kifolyócsövet! <br> Ügyelj a törésmentes és megfelelő magasságú kifolyócső elhelyezésre! <br>
+        </ul>
+
+      </li>
+
+      </ul>
+
+    </div>
+    <button id="goBack" class="treeControls">Vissza</button>
+
+    <button id="reset" class="treeControls">Újrakezd</button>
+    <br> <br> <a href="/index.html">Főoldal</a>
+  </div>
+
+
+</body>
+
+</html>

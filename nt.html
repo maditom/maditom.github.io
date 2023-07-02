@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//HU">
+<html>
+<head>
+  <title>hibakeresö</title>
+  <link rel="stylesheet" href="/images/decision-tree.css">
+<script type="text/javascript" src="/images/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/images/decision-tree.js"></script>
+  
+</head>
+<body>
+
+<div id="tree-container">
+  <div id="q-container">
+		<h5>Normál hűtőtér nem hűt </h5><br>
+    <ul id="tree">
+
+      <li> Hibakód kijelzés  hideg van?</li>
+
+		<li><input name="lvl1" type="radio">Igen
+		 <ul>Fagyasztótérben hideg van
+          <li>Belső ventilátor működik?</li>
+          <li><input name="lvl2" type="radio">Igen
+		   <ul>Belső ventilátor működik
+              <li>Légzsilip nyitva van?</li>
+              <li><input name="lvl3" type="radio">Igen
+			   <ul>Légzsilip nyitva van
+              <li>Kompresszor működik?</li>
+              <li><input name="lvl4" type="radio">Igen
+			    <ul>Kompresszor működik
+                  <li class="answer">
+                  <p>válaSZ KOMPRESSZOR MŰKÖDÉSÉRE</p>
+
+                  <p>If their position through the university ends, they will still be able to purchase the non-Enterprise version of this software, GoodGravy. They can then transfer their account data from AwesomeSauce to GoodGravy.</p>
+                  </li>
+                </ul>
+				</li>
+              <li><input name="lvl4" type="radio">Nem</li>
+            </ul>
+
+          </li></li>
+              <li><input name="lvl3" type="radio">Nem</li>
+            </ul>
+
+          </li>
+		  
+          <li><input name="lvl2" type="radio">Nem</li>
+        </ul>
+
+      </li>
+		<li><input name="lvl1" type="radio">Nem<ul>
+		Fagyasztótérben nincs hideg
+          <li>Vílágít a belső lámpa</li>
+          <li><input name="lvl2b" type="radio">Igen</li>
+          <li><input name="lvl2b" type="radio">Nem</li>
+        </ul>
+
+      </li>
+		
+    </ul>
+
+  </div>
+  <button id="goBack" class="treeControls">Vissza</button> 
+
+<button id="reset" class="treeControls">Újrakezd</button>
+<br> <br> <a href="/index.html">Főoldal</a>
+</div>
+
+
+</body>
+</html>

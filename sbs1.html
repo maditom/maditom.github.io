@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//HU">
+<html lang="hu">
+
+<head>
+	<meta charset="UTF-8">
+	<title>hibakeresö</title>
+	<link rel="stylesheet" href="/images/decision-tree.css">
+	<script type="text/javascript" src="/images/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/images/decision-tree.js"></script>
+
+</head>
+
+<body>
+
+	<div id="tree-container">
+		<div id="q-container">
+			<h5>Normál hűtőtér nem hűt </h5><br>
+			<ul id="tree">
+
+				<li> Hibakód kijelzés látható a kijelzőn?</li>
+				<li><input name="lvl1" type="radio">Igen
+					<ul>
+						<h5>Hibakód kijelzés látható</h5>
+						<li>Kijelzett hibakód:</li>
+						<li><input name="lvl2" type="radio">E1
+							<ul>E1 hibakód a kijelzőn <li class="answer">
+									<p>Normáltéri NTC hiba. (R sensor)</p><img src="images/ntc.png" alt="NTC">
+								</li>
+							</ul>
+						</li>
+						<li><input name="lvl2" type="radio">E3
+							<ul>E3 hibakód a kijelzőn<li class="answer">
+									<p>Fagyasztótéri NTC hiba (F sensor)</p><img src="images/ntc.png" alt="NTC">
+								</li>
+							</ul>
+						</li>
+						<li><input name="lvl2" type="radio">E4
+							<ul>E4 hibakód a kijelzőn <li class="answer">
+									<p>Elpárologtató NTC hiba (Fv sensor)</p><img src="images/ntc.png" alt="NTC">
+								</li>
+							</ul>
+						</li>
+						<li><input name="lvl2" type="radio">E0
+							<ul>E0 hibakód a kijelzőn<li class="answer">
+									<p>Helyiség - környezeti- NTC hiba</p>Ellenőrizd a főpanel és kezelő panel közötti
+									vezeték folytonosságát. Ha a vezeték jó, cserélj kezelőpanelt!
+								</li>
+							</ul>
+						</li>
+						<li><input name="lvl2" type="radio">Er
+							<ul>Er hibakód a kijelzőn<li class="answer">
+									<p>Kommunikációs hiba a kijelző és főpanel között.</p> Ellenőrizd a kezelő és
+									főpanel közötti vezetéket. Ha jó, cserélj kijelző panelt, ha továbbra sem jó, akkor
+									főpanelt!
+								</li>
+							</ul>
+						</li>
+						<li><input name="lvl2" type="radio">Ec
+							<ul>Ec hibakód a kijelzőn<li class="answer">
+									<p>Kommunikációs hiba a nyomógombok és főpanel között</p> Ellenőrizd a nyomógombok
+									működését és a kijelző-főpanel közötti vezetékezést<br><img src="images/gomb.png"
+										alt="gomb">
+								</li>
+							</ul>
+						</li>
+						<li><input name="lvl2" type="radio">F1
+							<ul>F1 hibakód a kijelzőn<li class="answer">
+									<p>Fagytéri ventilátor hiba.</p>Ellenőrizd a ventilátor csatlakozóját és a
+									ventilátor és főpanel közötti vezetéket. Ha jó, cserélj ventilátor motort, ha
+									továbbra sem jó, akkor főpanelt!
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><input name="lvl1" type="radio">Nem
+					<ul>Hibakód nem látható
+						<li>Légzsilip működik? (Készülék ki- bekapcsolásakor egyszer nyit-zár a jól működő légzsilip)</li>
+						<li><input name="lvl3" type="radio">Nem
+							<ul>
+								<li class="answer">
+									<p>Légzsilip hiba.</p>Ellenőrizd a légzsilip csatlakozóját és a légzsilip és főpanel
+									közötti vezetéket. Ha jó, cserélj légzsilipet, ha továbbra sem jó, akkor
+									főpanelt!<br><img src="images/damp.png" alt="Damper">
+								</li>
+							</ul>
+						</li>
+						<li><input name="lvl3" type="radio">Igen
+							<ul>Légzsilip működik
+								<li>Hőmérsékletérzékelők jól működnek?</li>
+								<li><input name="lvl4" type="radio">Nem -> Ellenörzöm az érzékelőket
+									<ul>
+										<li class="answer">
+											<p>NTC hiba.</p>Ellenőrizd az NTC-k hőmérsékletnek megfelelő értékét. Ha nem
+											jó, cseréld ki a megfelelő érzékelőt!<br><img src="images/ntc.png"
+												alt="NTC">
+										</li>
+									</ul>
+								</li>
+
+								<li><input name="lvl4" type="radio">Igen
+
+									<ul>Fagyasztótér rendben működik? Elég hideg van benne?
+										<li><input name="lvl5" type="radio">Nem
+											<ul>
+												<li class="answer">
+													<p>Fagyasztótér működési ellenörzése freezer.html</p>
+												</li>
+											</ul>
+										</li>
+										<li><input name="lvl5" type="radio">Igen
+											<ul>Fagyasztótér rendben működik
+												<li>Van hézag vagy rés az ajtó és a készülékváz között?</li>
+												<li><input name="lvl6" type="radio">Igen
+													<ul>Hézag van az ajtógumi és palást között<li class="answer">
+															<p>Ellenőrizd az ajtógumit. Ha kell, ragaszd be és szilózd
+																ki a palást fém és műanyag részei közötti rést.Ha
+																szükséges, az ajtó zsanér segítségével állítsd be az
+																ajtó megfelelő záródását!</p>
+														</li>
+													</ul>
+												</li>
+												<li><input name="lvl6" type="radio">Nincs
+													<ul>Hézagmentesen záródik az ajtó
+													</ul>
+												</li>
+											</ul>
+									</ul>
+							</ul>
+						</li>
+
+					</ul>
+
+				</li>
+
+			</ul>
+
+		</div>
+		<button id="goBack" class="treeControls">Vissza</button>
+
+		<button id="reset" class="treeControls">Újrakezd</button>
+
+	</div>
+
+
+</body>
+
+</html>
